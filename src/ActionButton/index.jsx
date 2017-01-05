@@ -15,7 +15,7 @@ export default class ActionButton extends React.Component {
     }
 
     render() {
-        const {className, action, onSuccess, onError} = this.props
+        const {className, action, onSuccess, onError, ...props} = this.props
         return (
             <div>
                 {!this.state.loading ? <button type='button' className={className} onClick={async ()=>{
@@ -41,10 +41,10 @@ export default class ActionButton extends React.Component {
                             })
                         }
                         if(typeof (onError) == 'function'){
-                            onError && onError(e)
+                            onError(e)
                         }
                     }
-                }}>
+                }} {...props}>
                     {this.props.children}
                 </button>:
                     <div className='loader-wrap'>
