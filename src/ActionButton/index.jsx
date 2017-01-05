@@ -18,12 +18,12 @@ export default class ActionButton extends React.Component {
         const {className, action, onSuccess, onError, ...props} = this.props
         return (
             <div>
-                {!this.state.loading ? <button type='button' className={className} onClick={async ()=>{
+                {!this.state.loading ? <button type='button' className={className} onClick={async (e)=>{
                     try{
                         this.setState({
                             loading: true
                         })
-                        const response = await action()
+                        const response = await action(e)
                         if(typeof (onSuccess) == 'function'){
                             onSuccess(response)
                         }

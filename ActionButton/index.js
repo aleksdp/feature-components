@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -12,6 +16,10 @@ var _regenerator2 = _interopRequireDefault(_regenerator);
 var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -68,14 +76,15 @@ var ActionButton = function (_React$Component) {
                 className = _props.className,
                 action = _props.action,
                 onSuccess = _props.onSuccess,
-                onError = _props.onError;
+                onError = _props.onError,
+                props = (0, _objectWithoutProperties3.default)(_props, ['className', 'action', 'onSuccess', 'onError']);
 
             return _react2.default.createElement(
                 'div',
                 null,
                 !this.state.loading ? _react2.default.createElement(
                     'button',
-                    { type: 'button', className: className, onClick: (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+                    (0, _extends3.default)({ type: 'button', className: className, onClick: (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
                             var response;
                             return _regenerator2.default.wrap(function _callee$(_context) {
                                 while (1) {
@@ -114,7 +123,7 @@ var ActionButton = function (_React$Component) {
                                                 });
                                             }
                                             if (typeof onError == 'function') {
-                                                onError && onError(_context.t0);
+                                                onError(_context.t0);
                                             }
 
                                         case 13:
@@ -123,7 +132,7 @@ var ActionButton = function (_React$Component) {
                                     }
                                 }
                             }, _callee, _this2, [[0, 9]]);
-                        })) },
+                        })) }, props),
                     this.props.children
                 ) : _react2.default.createElement(
                     'div',
