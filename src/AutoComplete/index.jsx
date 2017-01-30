@@ -27,7 +27,7 @@ export default class Export extends React.Component{
     handleOpen = () => {
         this.setState({open: true})
         if(this.state.pristine){
-            this.props.getItems()
+            if(typeof this.props.getItems == 'function') this.props.getItems()
             this.setState({pristine: false})
         }
     }
