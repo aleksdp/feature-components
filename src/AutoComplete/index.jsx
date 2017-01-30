@@ -12,6 +12,7 @@ export default class Export extends React.Component{
         onSelect: React.PropTypes.func,
         style: React.PropTypes.string,
         className: React.PropTypes.string,
+        wrapperClassName: React.PropTypes.string,
         placeholder: React.PropTypes.string
     }
 
@@ -47,6 +48,7 @@ export default class Export extends React.Component{
                 style={this.props.style}
                 className={this.props.className}
                 placeholder={this.props.placeholder}
+                wrapperClassName={this.props.wrapperClassName}
             />
         )
     }
@@ -112,13 +114,13 @@ class AutoComplete extends React.Component{
     render(){
         const {open, handleOpen, items, name} = this.props
         return(
-            <div className={`${this.props.className || 'autocomplete'}`} style={this.props.style}>
+            <div className={`${this.props.wrapperClassName || 'autocomplete'}`} style={this.props.style}>
                 {this.state.selectedItem != null ? <a onClick={this.handleRemove} className='remove'>X</a>: null}
                 <input
                     onFocus={handleOpen}
                     value={this.state.value}
                     onChange={this.handleChange}
-                    ref='q' className={`${open ? 'open': ''}`}
+                    ref='q' className={`${this.props.className} ${open ? 'open': ''}`}
                     placeholder={this.props.placeholder}
                 />
                 <List
