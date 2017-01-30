@@ -1,6 +1,6 @@
 {
   "name": "feature-components",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Common components for React.JS",
   "scripts": {
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir ./"

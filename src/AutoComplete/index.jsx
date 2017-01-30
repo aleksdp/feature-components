@@ -7,7 +7,7 @@ export default class Export extends React.Component{
     static propTypes = {
         items: React.PropTypes.array.isRequired,
         selectedItem: React.PropTypes.object,
-        getItems: React.PropTypes.func.isRequired,
+        getItems: React.PropTypes.func,
         fieldName: React.PropTypes.string.isRequired,
         onSelect: React.PropTypes.func,
         style: React.PropTypes.string,
@@ -69,14 +69,14 @@ class AutoComplete extends React.Component{
             value: this.refs.q.value,
             selectedItem: null
         })
-        this.props.getItems(this.refs.q.value)
+        if(typeof this.props.getItems == 'function') this.props.getItems(this.refs.q.value)
     }
 
     componentDidMount = () => {
         const {getItems} = this.props
         const {selectedItem} = this.state
         if(selectedItem){
-            getItems()
+            if(typeof getItems == 'function') getItems()
         }
     }
     componentWillReceiveProps = (props) => {
@@ -120,7 +120,7 @@ class AutoComplete extends React.Component{
                     onFocus={handleOpen}
                     value={this.state.value}
                     onChange={this.handleChange}
-                    ref='q' className={`${this.props.className} ${open ? 'open': ''}`}
+                    ref='q' className={`${this.props.className||'form-control'} ${open ? 'open': ''}`}
                     placeholder={this.props.placeholder}
                 />
                 <List
