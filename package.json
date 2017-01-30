@@ -1,6 +1,6 @@
 {
   "name": "feature-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common components for React.JS",
   "scripts": {
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir ./"
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/aleksdp/feature-components/issues"
   },
-  "homepage": "https://github.com/aleksdp/feature-components#readme"
+  "homepage": "https://github.com/aleksdp/feature-components#readme",
+  "dependencies": {
+    "react-onclickoutside-decorator": "^0.1.2"
+  }
 }

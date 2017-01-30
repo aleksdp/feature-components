@@ -84,55 +84,61 @@ var ActionButton = function (_React$Component) {
                 null,
                 !this.state.loading ? _react2.default.createElement(
                     'button',
-                    (0, _extends3.default)({ type: 'button', className: className, onClick: (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-                            var response;
-                            return _regenerator2.default.wrap(function _callee$(_context) {
-                                while (1) {
-                                    switch (_context.prev = _context.next) {
-                                        case 0:
-                                            _context.prev = 0;
+                    (0, _extends3.default)({ type: 'button', className: className, onClick: function () {
+                            var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
+                                var response;
+                                return _regenerator2.default.wrap(function _callee$(_context) {
+                                    while (1) {
+                                        switch (_context.prev = _context.next) {
+                                            case 0:
+                                                _context.prev = 0;
 
-                                            _this2.setState({
-                                                loading: true
-                                            });
-                                            _context.next = 4;
-                                            return action();
-
-                                        case 4:
-                                            response = _context.sent;
-
-                                            if (typeof onSuccess == 'function') {
-                                                onSuccess(response);
-                                            }
-                                            if (_this2.mount) {
                                                 _this2.setState({
-                                                    loading: false
+                                                    loading: true
                                                 });
-                                            }
-                                            _context.next = 13;
-                                            break;
+                                                _context.next = 4;
+                                                return action(e);
 
-                                        case 9:
-                                            _context.prev = 9;
-                                            _context.t0 = _context['catch'](0);
+                                            case 4:
+                                                response = _context.sent;
 
-                                            if (_this2.mount) {
-                                                _this2.setState({
-                                                    loading: false,
-                                                    e: _context.t0
-                                                });
-                                            }
-                                            if (typeof onError == 'function') {
-                                                onError(_context.t0);
-                                            }
+                                                if (typeof onSuccess == 'function') {
+                                                    onSuccess(response);
+                                                }
+                                                if (_this2.mount) {
+                                                    _this2.setState({
+                                                        loading: false
+                                                    });
+                                                }
+                                                _context.next = 13;
+                                                break;
 
-                                        case 13:
-                                        case 'end':
-                                            return _context.stop();
+                                            case 9:
+                                                _context.prev = 9;
+                                                _context.t0 = _context['catch'](0);
+
+                                                if (_this2.mount) {
+                                                    _this2.setState({
+                                                        loading: false,
+                                                        e: _context.t0
+                                                    });
+                                                }
+                                                if (typeof onError == 'function') {
+                                                    onError(_context.t0);
+                                                }
+
+                                            case 13:
+                                            case 'end':
+                                                return _context.stop();
+                                        }
                                     }
-                                }
-                            }, _callee, _this2, [[0, 9]]);
-                        })) }, props),
+                                }, _callee, _this2, [[0, 9]]);
+                            }));
+
+                            return function (_x) {
+                                return _ref.apply(this, arguments);
+                            };
+                        }() }, props),
                     this.props.children
                 ) : _react2.default.createElement(
                     'div',

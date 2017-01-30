@@ -1,6 +1,14 @@
 import React from 'react'
 
 export default class ActionButton extends React.Component {
+
+    static propTypes = {
+        className: React.PropTypes.string,
+        action: React.PropTypes.func.isRequired,
+        onSuccess: React.PropTypes.func,
+        onError: React.PropTypes.func
+    }
+
     constructor(){
         super();
         this.state = {
