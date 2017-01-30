@@ -8,7 +8,7 @@ export default class Export extends React.Component{
         items: React.PropTypes.array.isRequired,
         selectedItem: React.PropTypes.object,
         getItems: React.PropTypes.func.isRequired,
-        name: React.PropTypes.string.isRequired,
+        fieldName: React.PropTypes.string.isRequired,
         onSelect: React.PropTypes.func,
         style: React.PropTypes.string,
         className: React.PropTypes.string,
@@ -43,7 +43,7 @@ export default class Export extends React.Component{
                 items={this.props.items}
                 selectedItem={this.props.selectedItem}
                 getItems={this.props.getItems}
-                name={this.props.name}
+                name={this.props.fieldName}
                 onSelect={this.props.onSelect}
                 style={this.props.style}
                 className={this.props.className}
